@@ -77,7 +77,7 @@ def predict_sentiment(text: str):
     
     text = text
     text = clean_text(text)
-    text = tokenize_tweet(text)
+    #text = tokenize_tweet(text)
     #text = lemm_corpus(text)
     #prediction = sentiment_classification.predict([text])
     #prediction_returned = int(prediction[0])
