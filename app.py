@@ -8,7 +8,7 @@ import emoji
 
 # Re
 import re
-
+import nltk
 # NLTK
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
@@ -51,13 +51,13 @@ def tokenize_tweet(text):
     - Tokenisation                                                                                                                
     '''
 
-    text = word_tokenize(text) # Tokenisation
+    text = nltk.tokenize.word_tokenize(text) # Tokenisation
     return text
     
 def lemm_corpus(text):
     '''Lémmatisation, racinisation, Suppression des suffixes, mais cette méthode donne un contexte aux mots'''
 
-    text = " ".join([WordNetLemmatizer().lemmatize(i) for i in text])  # Lemmatisation du corpus
+    text = " ".join([nltk.stem.WordNetLemmatizer().lemmatize(i) for i in text])  # Lemmatisation du corpus
     return text
 
 
@@ -77,8 +77,8 @@ def predict_sentiment(text: str):
     
     text = text
     text = clean_text(text)
-    #text = tokenize_tweet(text)
-    #text = lemm_corpus(text)
+    text = tokenize_tweet(text)
+    text = lemm_corpus(text)
     prediction = sentiment_classification.predict([text])
     prediction_returned = int(prediction[0])
     probas = sentiment_classification.predict_proba([text])
