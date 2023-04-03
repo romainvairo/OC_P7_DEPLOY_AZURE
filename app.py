@@ -5,10 +5,6 @@ from fastapi import FastAPI
 import pickle
 import numpy as np
 
-
-# Matplotlib
-import matplotlib.pyplot as plt
-
 # Emoji
 import emoji
 
