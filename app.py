@@ -79,15 +79,15 @@ def predict_sentiment(text: str):
     text = clean_text(text)
     #text = tokenize_tweet(text)
     #text = lemm_corpus(text)
-    #prediction = sentiment_classification.predict([text])
-    #prediction_returned = int(prediction[0])
-    #probas = sentiment_classification.predict_proba([text])
-    #prediction_returned_probability = "{:.2f}".format(float(probas[:, prediction_returned]))
+    prediction = sentiment_classification.predict([text])
+    prediction_returned = int(prediction[0])
+    probas = sentiment_classification.predict_proba([text])
+    prediction_returned_probability = "{:.2f}".format(float(probas[:, prediction_returned]))
     
-    # sentiments = {0: "Negative", 1: "Positive"}
+    sentiments = {0: "Negative", 1: "Positive"}
     
-    #result = {"prediction": sentiments[prediction_returned], "Probability": str(float(prediction_returned_probability))}
-    return {'message': str(0)}#result
+    result = {"prediction": sentiments[prediction_returned], "Probability": str(float(prediction_returned_probability))}
+    return result
 
 
 # Démarrage de l'API, elle démarrera sur cette adresse http://127.0.0.1:8000
