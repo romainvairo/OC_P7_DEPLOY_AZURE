@@ -69,7 +69,7 @@ def index():
     return {'message': 'Bonjour, ceci est un test'}
 
 
-@app.post('/predict')
+@app.get("/predict")
 def predict_sentiment(text: str):
     """
     Retourne la prédiction du tweet qui a été écrit et également la probabilité de la prédiction
@@ -87,7 +87,7 @@ def predict_sentiment(text: str):
     sentiments = {0: "Negative", 1: "Positive"}
     
     result = {"prediction": sentiments[prediction_returned], "Probability": float(prediction_returned_probability)}
-    return result
+    return str(result)
 
 
 # Démarrage de l'API, elle démarrera sur cette adresse http://127.0.0.1:8000
