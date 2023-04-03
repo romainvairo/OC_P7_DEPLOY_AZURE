@@ -3,15 +3,11 @@ import uvicorn
 from fastapi import FastAPI
 # from Model import SentimentsAnalysis
 import pickle
-import pandas as pd
 import numpy as np
 
 
 # Matplotlib
 import matplotlib.pyplot as plt
-
-# Seaborn
-import seaborn as sns
 
 # Emoji
 import emoji
@@ -26,31 +22,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
-# Keras
-from keras.models import Sequential
-from keras.layers import Embedding, LSTM, Dense, Dropout, Flatten,SpatialDropout1D, Bidirectional, Conv1D, GlobalMaxPooling1D, GlobalAveragePooling1D
-from keras.initializers import Constant
-from  keras.optimizers import Adam
-
-# Tensorflow
-from tensorflow import keras
 
 # NLTK
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-
-# time
-import time
-
-# MLflow
-import mlflow
-
-# Pyngrock
-from pyngrok import ngrok
-
-# OS
-import os
 
 
 app = FastAPI()
