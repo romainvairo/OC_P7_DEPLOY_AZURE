@@ -86,8 +86,8 @@ def predict_sentiment(text: str):
     
     sentiments = {0: "Negative", 1: "Positive"}
     
-    result = {"prediction": sentiments[prediction_returned], "Probability": float(prediction_returned_probability)}
-    return str(result)
+    result = {"prediction": sentiments[prediction_returned], "Probability": str(float(prediction_returned_probability))}
+    return result
 
 
 # Démarrage de l'API, elle démarrera sur cette adresse http://127.0.0.1:8000
