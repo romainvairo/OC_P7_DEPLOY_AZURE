@@ -39,7 +39,7 @@ def clean_text(text):
     text = text if len(text) <= 150 else [] # Supprime les tweets d'une longueur supérieure à 150 caractères
     text = emoji.demojize(text) # Convertis les émojis en texte
     text = re.sub('https?://\S+|www\.\S+', '', text) # Supprime les liens
-    text = re.sub(re.compile(r'\b(' + r'|'.join(stopwords.words("english")) + r')\b\s*'), '', text) # Supprime les stop-words
+#    text = re.sub(re.compile(r'\b(' + r'|'.join(stopwords.words("english")) + r')\b\s*'), '', text) # Supprime les stop-words
     text = re.sub(r'[0-9]', '', text) # Supprime les chiffres dans tout le corpus
     text = re.sub(r"[^a-zA-Z0-9 ]", " ", text) # Supprime les caractères spéciaux
     text = re.sub(' +', ' ', text) # Supprime les espaces et n'en laisse qu'un s'ils y en a plus que 1
@@ -76,8 +76,8 @@ def predict_sentiment(text: str):
     """
     
     text = text
-    #text = clean_text(text)
-    #text = tokenize_tweet(text)
+    text = clean_text(text)
+    text = tokenize_tweet(text)
     #text = lemm_corpus(text)
     #prediction = sentiment_classification.predict([text])
     #prediction_returned = int(prediction[0])
