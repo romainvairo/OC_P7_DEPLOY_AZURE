@@ -16,10 +16,14 @@ class testunit(aiounittest.AsyncTestCase):
             res = app.predict_sentiment("happy")
             assert res
 
-    def clean_text(self):
+    def test_clean_text(self):
            res = app.clean_text("i love python")
            assert "i love python"
 
-    def clean_text(self):
+    def test_clean_text(self):
            res = app.clean_text(0)
            assert ""
+
+    def test_clean_text(self):
+           res = app.clean_text("i+ love+ python")
+           assert "i love python"
