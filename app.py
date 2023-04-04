@@ -12,7 +12,7 @@ import nltk
 # NLTK
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
+#from nltk.corpus import stopwords
 
 # Sklearn
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, fbeta_score, roc_auc_score, roc_curve, confusion_matrix, classification_report, auc
