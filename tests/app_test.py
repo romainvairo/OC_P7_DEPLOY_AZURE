@@ -14,12 +14,12 @@ import app
 class testunit(aiounittest.AsyncTestCase):
     def test_on_prediction_return_value(self):
             res = app.predict_sentiment("happy")
-            assert res
+            assert len(res)>0
 
     def test_clean_text_return_value_text(self):
            res = app.clean_text("i love python")
-           assert "i love python"
+           assert res=="i love python"
 
     def test_clean_text_send_value_plus_return_cleantext(self):
            res = app.clean_text("i+ love+ python")
-           assert "i love python"
+           assert res=="i love python"
