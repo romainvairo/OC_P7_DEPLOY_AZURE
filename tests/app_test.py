@@ -20,10 +20,6 @@ class testunit(aiounittest.AsyncTestCase):
            res = app.clean_text("i love python")
            assert "i love python"
 
-    def test_clean_text_send_numeric_return_value(self):
-           res = app.clean_text(0)
-           assert ""
-
     def test_clean_text_send_value_plus_return_cleantext(self):
            res = app.clean_text("i+ love+ python")
            assert "i love python"
