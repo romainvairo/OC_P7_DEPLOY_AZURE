@@ -11,10 +11,11 @@ from typing import Dict
 from datetime import datetime
 import app
 
-def test_on_prediction_return_value(self):
-        res = app.predict_sentiment("happy")
-        assert res
+class testunit(aiounittest.AsyncTestCase):
+    def test_on_prediction_return_value(self):
+            res = app.predict_sentiment("happy")
+            assert res
 
-def test_on_prediction_return_empty(self):
-        res = app.predict_sentiment(0)
-        assert res
+    def test_on_prediction_return_empty(self):
+            res = app.predict_sentiment(0)
+            assert res
