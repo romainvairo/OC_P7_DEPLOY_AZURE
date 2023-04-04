@@ -1,1 +1,3 @@
 # OC_P7_DEPLOY_AZURE
+
+test
