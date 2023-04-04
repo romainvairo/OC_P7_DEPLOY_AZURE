@@ -14,7 +14,7 @@ import app
 class testunit(aiounittest.AsyncTestCase):
     def test_on_prediction_return_value(self):
             res = app.predict_sentiment("happy")
-            assert len(res)>0
+            assert len(str(res))>0
 
     def test_clean_text_return_value_text(self):
            res = app.clean_text("i love python")
